@@ -31,8 +31,10 @@
 #if FOLLY_MOBILE || defined(__APPLE__)
 #define FOLLY_FUTURE_USING_FIBER 0
 #else
+// @jichi 10/20/2017: Always disable fiber in order to support latest boost
+// See: https://github.com/facebook/folly/issues/463
 #define FOLLY_FUTURE_USING_FIBER 0
-#include <folly/fibers/Baton.h>
+//#include <folly/fibers/Baton.h>
 #endif
 
 namespace folly {
